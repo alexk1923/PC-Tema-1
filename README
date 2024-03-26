@@ -1,0 +1,27 @@
+Problema #1 (ninel)
+
+1. In cazul in care avem mai mult de 2 copaci, incepem sa facem verificarile cu ajutorul unui while. Daca gasim copaci speciali, adaugam inaltimea acestora in suma si numaram cati copaci speciali sunt in total
+2. Verificam paritatea indicilor copacilor speciali si actualizam inaltimea maxima a copacilor impari si inaltimea minima a copacilor pari, daca este cazul, tinand cont si daca am gasit un copac special pe fiecare tip de indice (par/impar). Apoi actualizam copacul curent si copacul anterior.
+3. Pentru cazurile in speciale, in care nu am gasit deloc copaci speciali sau in care am gasit doar pe un anumit tip de indice (par/impar), actualizam "xmax_impar" si "xmin_par".
+
+Problema #2 vectsecv
+
+1. Vom folosi 2 functii, una ordoneaza cifrele numarului in ordine crescatoare, iar cealalta ordoneaza cifrele numarului in ordine descrescatoare. Pentru acest algoritm vom folosi un vector de frecventa in care v[i] are semnificatia ca cifra i apare de v[i] ori in numar. Parcurgem vectorul de la inceput la sfarsit sau invers, in functie de ordinea dorita a cifrelor.
+2. Apoi, cat timp nu am gasit primul numar din secventa periodica, vom compara mereu diferenta curenta cu diferentele puse anterior in vectorul a[]. Daca vom gasi ca acel numar se afla deja in vector, inseamna ca diferenta curenta este primul numar din secventa periodica. Retinem dupa cate operatii am gasit primul numar.
+3. In final, dupa ce iese din while, scadem pe k pentru a reveni la valoarea ultimului index (dimensiunea vectorului format din diferente) si afisam nr de operatii si secventa periodica.
+
+Problema #3 codeinvim
+
+1. Folosim 2 vectori: grades[] si credits[] care stocheaza valorile notelor si creditelor. Calculam apoi punctajul obtinut. Parcurgem vectorul de note (grades[]) si daca gasim o materie la care nu este nota 10, calculam cate puncte am obtine daca am modifica nota initiala in nota 10. (puncte stocate in vectorul increase). 
+2. Sortam vectorul increase[] cu ajutorul algorimtului "sortare prin selectie" si apoi adaugam la punctajul initial cele mai mari "imbunatatiri" in urma transformarii notelor initiale in nota 10, cat timp punctajul curent este mai mic decat punctajul minim necesar. Variabila "m" stocheaza numarul de materii la care nota trebuie sa fie marita la 10.
+3. In finalul programului, daca tot nu am reusit sa atingem punctajul minim necesar, m va deveni -1. 
+
+Problema #4 nomogram
+
+1. Pentru a afla daca nomogram-ul este completat corect, vom folosi 2 matrici completate cu ajutorul functiei "rules". Semnificatia matricii este: pe linia(coloana) i, vom avea rule[i][x] grupuri de x elemente. 
+
+2. In functia rules, citim fie pentru linii, fie pentru coloane, numarul corect de grupuri de pe acea linie/coloana si cate elemente ar trebui sa aiba fiecare grup. Completam apoi matricea rule[][] cu regula descrisa mai sus
+3. Citim matricea nom[][], reprezentand grid-ul completat si stabilim in functie de aceasta matrice, prin 2 functii: rows(...) si cols(...) cate grupuri exista si cate elemente are fiecare, pe o anumita linie sau coloana. Fiecare functie va parcurge linia/coloana si daca se va gasi un grup, se vor contoriza numarul de elemente si va fi completata matricea groups_row[][] / groups_col[][], cu aceeasi semnificatie ca si matricile de tip "rule".
+4. In final, vom verifica daca matricile corespunzatoare liniilor/coloanelor (groups_row[][], groups_col[][] sunt identice cu matricile de tip "rule", stabilite in urma datelor de intrare. Aceasta comparatie reprezinta corectitudinea completarii grid-ului, afisandu-se "Corect" sau "Eroare", dupa caz.
+
+
